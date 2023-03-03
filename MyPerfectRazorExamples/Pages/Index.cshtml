@@ -1,0 +1,28 @@
+﻿@page
+@using MyPerfectRazorExamples.Models
+@model IndexModel
+@addTagHelper "*, MyPerfectRazorExamples"
+@{
+    ViewData["Title"] = "Home page";
+
+}
+
+<div class="text-center">
+    @*<form method="post" asp-route="/">
+    <p>Name</p>
+    <p><input type="text" name="Name" /></p>
+    <p>Description</p>
+    <p><input type="text" name="Description" /></p>
+    <p>Count</p>
+    <p><input type="text" name="Count" /></p>
+    <p>Price</p>
+    <p><input type="text" name="Price" /></p>
+    <p>Available</p>
+    <p><input type="text" name="Available" /></p>
+    <p><button type="submit">Add</button></p>
+    </form>*@
+    <h1>Welcome</h1>
+    <input-form model="@typeof(Product)"
+                action-url="/products"
+                method="@TagHelpers.InputFormMethod.Post" />
+</div>

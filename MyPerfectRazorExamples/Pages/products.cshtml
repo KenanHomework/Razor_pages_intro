@@ -1,0 +1,32 @@
+﻿@page
+@model MyPerfectRazorExamples.Pages.productsModel
+@addTagHelper "*, MyPerfectRazorExamples"
+
+@if (!Model.Products.Any())
+{
+    <h3>No data</h3>
+}
+else
+{
+    <h3>Products</h3>
+    @*<table>
+        <tbody>            
+        <thead>
+            <tr>
+                <td>Name</td>
+            </tr>
+        </thead>
+            @foreach (var product in Model.Products.ToList())
+            {
+                <tr>
+                    <td>
+                        <a href="products/@product.Id">@product.Name</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+    <table-view items=@Model.Products.ToList() details-link-template="products/{id}"/>
+    
+}
